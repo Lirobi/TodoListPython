@@ -1,0 +1,49 @@
+<div class="todolist-item">
+{% load static %}
+  <style>
+    .form-todo {
+      display: flex;
+      gap: 20px;
+      border: 1px solid var(--gray);
+      width: fit-content;
+      padding: 10px;
+      border-radius: 0.5rem;
+      background-color: var(--gray);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .form-todo div:not(#buttons) {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    #buttons {
+      display: flex;
+      margin: auto;
+      gap: 10px;
+    }
+    label {
+      color: var(--blue);
+    }
+    input[type="text"] {
+      border: 0px;
+      padding: 10px;
+      border-radius: .5rem;
+    }
+    input[name="completed"] {
+      height:30px;
+      width:30px;
+      margin: auto;
+    }
+  </style>
+
+    <li>
+        <form action="todos/update" method="post" class="form-todo"> 
+            {% csrf_token %}
+            {{todo}}
+            <div id="buttons">
+                <input type="submit" class="button-icon" name="save" value="" style="background-image: url({% static 'media/toolbox.svg'%});"></input>
+                <input type="submit" class="button-icon" name="delete" value="" style="background-image: url({% static 'media/trash.svg'%});"></input>
+            </div>
+        </form>
+    </li>
+</div>

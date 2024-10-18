@@ -1,0 +1,28 @@
+
+
+
+<div class="error-container">
+    <style>
+    .error-message-container {
+        border: 0px;
+        border-radius: .5rem;
+        background-color: var(--gray);
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom:2px;
+        padding-top:2px;
+    }
+    .error-messsage {
+        color: red;
+        text-align:center;
+    }
+</style>
+    <div class="error-message-container">
+        <p class="error-messsage">Oops, an error has occured...
+        <br>
+        {{ message }}
+        <br>
+        <a href="/">Go to home page</a>
+    </p>
+    </div>
+</div>
