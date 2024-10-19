@@ -1,13 +1,11 @@
 {
   "builds": [{
-      "src": "TodoList/wsgi.py",
-      "use": "@ardnt/vercel-python-wsgi",
-      "config": { "maxLambdaSize": "15mb" }
+      "src": "manage.py runserver",
+      "use": "@vercel/python"
   }],
   "routes": [
       {
-          "src": "/(.*)",
-          "dest": "TodoList/wsgi.py"
+          "src": "/(.*)"
       }
   ]
 }
