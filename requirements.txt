@@ -1,2 +1,2 @@
 Django==3.2.20
-psycopg2-binary==2.9.3  # Si tu utilises PostgreSQL comme base de données
+psycopg2==2.9.3  # Si tu utilises PostgreSQL comme base de données
