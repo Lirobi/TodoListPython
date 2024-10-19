@@ -1,11 +1,21 @@
 {
-  "builds": [{
-      "src": "manage.py runserver",
+  "version": 2,
+  "builds": [
+    {
+      "src": "TodoList/wsgi.py",
       "use": "@vercel/python"
-  }],
+    }
+  ],
   "routes": [
-      {
-          "src": "/(.*)"
-      }
-  ]
+    {
+      "src": "/(.*)",
+      "dest": "TodoList/wsgi.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "TodoList.settings",
+    "SECRET_KEY": "@django_secret_key",
+    "DEBUG": "true"
+  },
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --no-input"
 }

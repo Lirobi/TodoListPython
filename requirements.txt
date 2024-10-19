@@ -1,0 +1,4 @@
+Django==3.2.20
+gunicorn==20.1.0
+psycopg2==2.9.3  # Si tu utilises PostgreSQL comme base de données
+whitenoise==6.0.0  # Pour la gestion des fichiers statiques sur Vercel
