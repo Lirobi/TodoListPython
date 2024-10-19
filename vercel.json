@@ -14,7 +14,7 @@
   ],
   "env": {
     "DJANGO_SETTINGS_MODULE": "TodoList.settings",
-    "SECRET_KEY": "@django_secret_key",
+    "SECRET_KEY": "django-insecure-!n*c@(8gc*6(f%7f67-*p6!(qogwt8ql$3x#%865g*l92#*itb",
     "DEBUG": "true"
   },
   "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --no-input"
