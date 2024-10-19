@@ -76,9 +76,18 @@ WSGI_APPLICATION = 'TodoList.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'lawyX6UsgVY1',
+        'HOST': 'ep-rough-shape-a2gjl8vw-pooler.eu-central-1.aws.neon.tech',
+        'PORT': '5432',
     }
+
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': BASE_DIR / 'db.sqlite3',
+    #}
 }
 
 
