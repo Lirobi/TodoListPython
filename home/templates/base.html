@@ -36,6 +36,13 @@
 
   <body>
     {%include "navbar.html"%} 
+
+    {%if error.has_assignment%}
+      <div style="display:flex;margin:auto;">
+        {%include "error.html" with message=error%}
+      </div>
+    {%endif%}
+
     {%block content%} {%endblock%}
   </body>
 </html>

@@ -9,27 +9,7 @@ def home(request):
     return render(request, "home.html")
 
 def todos(request):
-    todos = []
-    for item in TodoItem.objects.all():
-        form = TodoItemForm(instance=item)
-        todos.append(form)
-
-    
-
-    idList = TodoItem.objects.values_list('id', flat=True)
-    newId = -1
-    i = 0
-    while newId < 0:
-        if i not in idList:
-            newId = i
-        i+=1
-        
-
-    newItem = TodoItem(id=newId)
-
-    todos.append(TodoItemForm(instance=newItem))
-
-    return render(request, "todos.html", {"todos": todos})
+    return render(request, "todos.html", {"todos": getTodos()})
 
 def update(request):
     if request.method == "POST":
@@ -37,6 +17,10 @@ def update(request):
             id = request.POST["id"]
             name = request.POST["name"]
             completed = False
+
+            if len(name) >= 150:
+                return HttpResponseRedirect("../todos")
+
             if "completed" in request.POST and request.POST["completed"] == "on":
                 completed = True
             
@@ -66,5 +50,39 @@ def account(request):
         else:
             return render(request, "account.html", {"error" : "Invalid credentials"})
     return HttpResponseRedirect("../todos")
+
 #TODO : faire la connection user, associer un userid à un todo. ne charger que les todos qui ont l'user id de l'utilisateur connecté
 
+
+
+
+
+
+
+
+
+
+#UTILS
+
+
+def getTodos(): #TODO Mettre user en paramètre et retourner ceux de cet utilisateur
+    todos = []
+    for item in TodoItem.objects.all():
+        form = TodoItemForm(instance=item)
+        todos.append(form)
+
+    
+
+    idList = TodoItem.objects.values_list('id', flat=True)
+    newId = -1
+    i = 0
+    while newId < 0:
+        if i not in idList:
+            newId = i
+        i+=1
+        
+
+    newItem = TodoItem(id=newId)
+
+    todos.append(TodoItemForm(instance=newItem))
+    return todos
