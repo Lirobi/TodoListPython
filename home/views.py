@@ -48,7 +48,9 @@ def account(request):
             else:
                 return render(request, "account.html", {"error" : "Error while authenticating, please retry later."})
         else:
-            return render(request, "account.html", {"error" : "Invalid credentials"})
+            return render(request, "account.html", {"error" : "Invalid credentials."})
+    else:
+        return render(request, "account.html", {"error": "Invalid request."})
     return HttpResponseRedirect("../todos")
 
 #TODO : faire la connection user, associer un userid à un todo. ne charger que les todos qui ont l'user id de l'utilisateur connecté
