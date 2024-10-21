@@ -5,5 +5,11 @@
       "src": "TodoList/wsgi.py",
       "use": "@vercel/python"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "TodoList/wsgi.py"
+    }
   ]
 }
