@@ -15,6 +15,6 @@
   "env": {
     "DEBUG": "false"
   },
-  "buildCommand": "pip install -r requirements.txt && gunicorn TodoList.wsgi:application --bind 0.0.0.0:$PORT",
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic && gunicorn TodoList.wsgi:application --bind 0.0.0.0:$PORT",
   "outputDirectory": "."
 }
