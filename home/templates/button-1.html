@@ -7,9 +7,10 @@
             justify-content: center;
         }
         .button-1 {
-            width:90%;
+            
+            width: 350px;
             height: 40px;
-            border: 0px;
+            border: 1px solid var(--blue);
             border-radius: .5rem;
             background-color: var(--blue);
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -17,7 +18,19 @@
             font-size: 120%;
             color: black;
             cursor: pointer;
+
+            transition: all 0.3s ease-in-out;
         }
+
+        .button-1:hover {
+            {%if animation == "1"%}
+            transform: scale(1.1);
+            {%endif%}
+            {%if animation == "2"%}
+            background: transparent;
+            {%endif%}
+        }
+
     
 
     </style>

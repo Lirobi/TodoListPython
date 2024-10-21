@@ -16,9 +16,11 @@
         display:flex;
     }
     .navbar-container .account-button {
-        width: 100%;
+        width: 90%;
         display: inline-block;
         align-self: flex-end;
+
+        margin:auto;
         margin-bottom: 5%;
     }
   </style>
@@ -27,7 +29,7 @@
   <div class="account-button">
     <form action="account" method="POST">
     {%csrf_token%}
-    {%include "button-1.html" with action="submit()" text="Account"%}
+    {%include "button-1.html" with action="submit()" text="Account" animation="2"%}
     </form>
   </div>
   </div>

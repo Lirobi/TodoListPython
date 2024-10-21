@@ -1,3 +1,45 @@
-{% extends "base.html" %}{%block title%}Home{%endblock%}{% block content %}
-<h1>Bienvenue!</h1>
+
+
+{% extends "base.html" %}
+
+{%block title%}Home{%endblock%}
+
+
+{% block content %}
+<div class="container content-container">
+
+    <h1>Welcome!</h1>
+
+    <div class="container todos-button-container">
+    <style>
+        h1 {
+            margin: auto;
+            margin-top:60px;
+            font-size: 250%;
+        }
+        .todos-button-container {
+            position: absolute;
+            margin: auto;
+            width: 350px;
+            align-self: center;
+            transform: scale(2);
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        .content-container {
+            height: 100%;
+            margin:auto;
+            display:flex;
+            flex-direction: column;
+        }
+
+        
+    </style>
+    {%include "button-1.html" with action="window.location='../todos';" text="My dashboard" animation="1"%}
+    </div>
+</div>
 {% endblock %}
+
+
