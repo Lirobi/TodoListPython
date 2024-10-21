@@ -46,7 +46,7 @@ def account(request):
             if user is not None:
                 pass
             else:
-                return render(request, "account.html", {"error" : "Invalid credentials"})
+                return render(request, "account.html", {"error" : "Error while authenticating, please retry later."})
         else:
             return render(request, "account.html", {"error" : "Invalid credentials"})
     return HttpResponseRedirect("../todos")

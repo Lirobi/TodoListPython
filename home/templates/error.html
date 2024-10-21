@@ -11,6 +11,17 @@
         padding-right: 20px;
         padding-bottom:2px;
         padding-top:2px;
+
+        position: absolute;
+        margin: auto;
+        width: 350px;
+        align-self: center;
+        transform: scale(2);
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        
     }
     .error-messsage {
         color: red;
@@ -21,6 +32,8 @@
         <p class="error-messsage">Oops, an error has occured...
         <br>      
         {{ error }} 
+        <br>
+        <a href="/">Home page</a>
     </p>
     </div>
 </div>
