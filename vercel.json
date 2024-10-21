@@ -13,7 +13,8 @@
     }
   ],
   "env": {
-    "DEBUG": "false"
+    "DEBUG": "false",
+    "WSGI_APPLICATION": "TodoList.wsgi.application"
   },
   "buildCommand": "pip install -r requirements.txt && gunicorn TodoList.wsgi:application --bind 0.0.0.0:$PORT",
   "outputDirectory": "."
