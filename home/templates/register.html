@@ -1,0 +1,22 @@
+{%extends "base.html"%} {%block title%}Register{%endblock%} {%block content%}
+{%include "loginform.html"%}
+<div class="login-form-container">
+  <h1>Sign Up</h1>
+  {%if missing.has_assignment%}
+  <div class="message-box">
+    <p class="message">{{missing}}</p>
+  </div>
+  {%endif%}
+  <form class="register-form" action="register" method="post">
+    {% csrf_token %}
+    <label for="email" class="email-label">Email</label
+    ><input type="email" name="email" class="email-input" />
+    <label for="username" class="username-label">Username</label
+    ><input type="text" name="username" class="username-input" />
+    <label for="password" class="password-label">Password</label
+    ><input type="password" name="password" class="password-input" />
+    <input type="submit" value="Sign Up" />
+  </form>
+  <a href="login">Already signed up ? Sign in</a>
+</div>
+{%endblock%}
