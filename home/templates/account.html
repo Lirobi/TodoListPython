@@ -1,4 +1,16 @@
 {%extends "base.html"%}
 
 {%block content%}
+
+<style>
+.logout-form {
+    margin: auto;
+    transform: scale(2);
+}
+</style>
+<form action="logout" method="post" class="logout-form">
+    {% csrf_token %}
+    {%include "button-1.html" with action="submit()" text="Log out" animation="2"%}
+</form>
+
 {%endblock%}

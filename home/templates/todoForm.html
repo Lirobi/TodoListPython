@@ -40,15 +40,17 @@
       width:30px;
       margin: auto;
     }
+
+    
   </style>
 
     <li>
-        <form action="todos/update" method="post" class="form-todo"> 
+        <form action="update" method="post" class="form-todo"> 
             {% csrf_token %}
             {{todo}}
             <div id="buttons">
-                <input type="submit" class="button-icon" name="save" value="" style="background-image: url({% static 'toolbox.svg'%});"></input>
-                <input type="submit" class="button-icon" name="delete" value="" style="background-image: url({% static 'trash.svg'%});"></input>
+                <input type="submit" class="button-icon scale-animation scale-animation-1-1" name="save" value="" style="background-image: url({% static 'toolbox.svg'%});"></input>
+                <input type="submit" class="button-icon scale-animation scale-animation-1-1" name="delete" value="" style="background-image: url({% static 'trash.svg'%});"></input>
             </div>
         </form>
     </li>

@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%block title%}Login{%endblock%}
+
+{%block content%}
+
+{%include "loginform.html"%}
+
+<div class="login-form-container">
+    <h1>Sign In</h1>
+    {%if missing.has_assignment%}
+    <div class="message-box">
+        <p class="message">{{missing}}</p>
+    </div>
+    {%endif%}
+    <form class="login-form" action="login" method="post">
+        {% csrf_token %}
+        <label for="login" class="login-label">Login</label><input type="text" name="login" class="login-input scale-animation scale-animation-1-02"/>
+        <label for="password" class="password-label">Password</label><input type="password" name="password" class="password-input scale-animation scale-animation-1-02"/>
+        <input type="submit" class="scale-animation scale-animation-1-02" value="Sign In">
+    </form>
+    <a href="register" class="scale-animation scale-animation-1-02">Don't have an account ? Sign Up</a>
+</div>
+{%endblock%}

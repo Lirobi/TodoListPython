@@ -14,6 +14,7 @@
         width: 100%;
         height: 100%;
         display:flex;
+        flex-direction: column;
     }
     .navbar-container .account-button {
         width: 90%;
@@ -23,9 +24,37 @@
         margin:auto;
         margin-bottom: 5%;
     }
+    .home-button, .todos-button {
+        margin:auto;
+        margin-top: 5%;
+    }
+    .home-link, .todos-link{
+      text-decoration: none;
+      color: black;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      justify-content: center;
+      transform: translateX(-10px);
+    }
   </style>
   <div class="navbar-container">
-  
+
+  <ul class="links">
+    <li class="home-button">
+      <h2 class="home-title scale-animation scale-animation-1-1"><a href="/" class="home-link">Home</a></h2>
+    </li>
+
+    <li class="todos-button">
+      <h2 class="todos-title scale-animation scale-animation-1-1"><a href="/todos" class="home-link">Todos</a></h2>
+    </li>
+
+  </ul>
+
+
   <div class="account-button">
     <form action="account" method="POST">
     {%csrf_token%}

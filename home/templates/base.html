@@ -8,6 +8,7 @@
         --blue: #2A92D6;
         --white : #ffffff;
         --gray: #CED0DB;
+        --boxshadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       html {
         font-family: roboto;
@@ -37,7 +38,18 @@
         display:flex;
         flex-direction: column;
       }
-
+      .scale-animation {
+        transition: all 0.3s ease-in-out;
+      }
+      .scale-animation-1-1:hover {
+  
+        transform: scale(1.1);
+      }
+      .scale-animation-1-02:hover {
+  
+        transform: scale(1.02);
+      }
+      
 
       {% block style %}
       {% endblock %}

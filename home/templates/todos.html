@@ -20,12 +20,32 @@ h1 {
 
 <h1>Todo list</h1>
     <ul class="list" id="todolist-ul">
+
+        <!-- This code puts the empty (new) on top -->
         {% for todo in todos %}
-            {%include "todoForm.html"%}
+            {%if todo.completed.value == 0 and todo.name.value == "" %}
+                {%include "todoForm.html"%}
+            {%endif%}
         {% endfor %}
 
+        <!-- This code displays only not completed todo items-->
+        {% for todo in todos %}
+            {%if todo.completed.value == 0 and todo.name.value != "" %}
+                {%include "todoForm.html"%}
+            {%endif%}
+        {% endfor %}
     </ul>
 
+
+<h1>Completed</h1>
+    <!-- This code displays only completed todo items-->
+    <ul class="list" id="todolist-ul">
+        {% for todo in todos %}
+            {%if todo.completed.value == 1%}
+                {%include "todoForm.html"%}
+            {%endif%}
+        {% endfor %}
+    </ul>
 </div>
 
 
