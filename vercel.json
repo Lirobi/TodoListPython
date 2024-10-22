@@ -5,6 +5,13 @@
       "src": "TodoList/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
     }
   ],
   "routes": [
@@ -20,6 +27,6 @@
   "env": {
     "DEBUG": "false"
   },
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic && gunicorn TodoList.wsgi:application --bind 0.0.0.0:$PORT",
+  "buildCommand": "gunicorn TodoList.wsgi:application --bind 0.0.0.0:$PORT",
   "outputDirectory": "."
 }
