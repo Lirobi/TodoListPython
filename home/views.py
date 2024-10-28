@@ -51,7 +51,7 @@ def update(request):
 
 
 
-def login(request):# if logged in : go to account management
+def login(request): # if logged in : go to account management
     if request.user.is_authenticated:
         return redirect("../todos")
     if request.method == "POST":
@@ -62,7 +62,7 @@ def login(request):# if logged in : go to account management
             user = authenticate(username=login_, password=password)
             if user is not None and user.is_active:
                 auth.login(request, user)
-                return redirect("../todos")#go to todos
+                return redirect("../todos") #go to todos
                 
             else:
                 return render(request, "account.html", {"error" : "Error while authenticating, please retry later."}) # if unknow error
